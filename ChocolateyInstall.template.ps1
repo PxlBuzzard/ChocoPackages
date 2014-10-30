@@ -3,6 +3,7 @@ $fileType = ''
 $silentArgs = ''
 $url = ''
 $url64bit = ''
+$version = ''
 
 Install-ChocolateyPackage $packageName $fileType $silentArgs $url $url64bit
 
