@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>dub</id>
+        <version>0.9.22</version>
+        <title>dub</title>
+        <authors>https://github.com/orgs/D-Programming-Language/people</authors>
+        <owners>Daniel Jost</owners>
+        <licenseUrl>https://github.com/D-Programming-Language/dub/blob/master/LICENSE.txt</licenseUrl>
+        <projectUrl>https://github.com/D-Programming-Language/dub</projectUrl>
+        <iconUrl>https://cdn.rawgit.com/D-Programming-Language/dub-registry/master/public/images/logo-small.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>DUB emerged as a more general replacement for vibe.d's package manager. It does not imply a dependecy to vibe.d for packages and was extended to not only directly build projects, but also to generate project files (currently VisualD). Mono-D also support the use of dub.json (dub's package description) as project file.
+
+You can specify a version by using `choco install dub -version 0.9.22`.</description>
+        <summary>Package and build manager for D applications and libraries.</summary>
+        <tags>dlang dub</tags>
+  </metadata>
+</package>

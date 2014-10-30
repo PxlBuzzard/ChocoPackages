@@ -10,7 +10,7 @@ cd /d %0\..
 md %1
 md %1\tools
 copy nuspec.template.xml %1\%1.nuspec
-copy ChocolateyInstall.template.ps1 %1\tools\ChocolateyInstall.ps1
+copy chocolateyInstall.template.ps1 %1\tools\chocolateyInstall.ps1
 
 :: Return to the original directory
 cd /d %OLDDIR%
