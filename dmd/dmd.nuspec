@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>dmd</id>
+        <version>2.066</version>
+        <title>DMD</title>
+        <authors>https://github.com/orgs/D-Programming-Language/people</authors>
+        <owners>Daniel Jost</owners>
+        <licenseUrl>http://wiki.dlang.org/DMD_License</licenseUrl>
+        <projectUrl>http://dlang.org/</projectUrl>
+        <iconUrl>https://cdn.rawgit.com/D-Programming-Language/dlang.org/master/images/dlogo.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>
+dmd is the reference compiler for the D programming language.
+
+You can specify a version by using `choco install dmd -Version 2.066`.
+        </description>
+        <summary>dmd is the reference compiler for the D programming language.</summary>
+        <tags>dlang dmd</tags>
+  </metadata>
+</package>
