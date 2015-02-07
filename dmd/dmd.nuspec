@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>dmd</id>
-        <version>2.066</version>
+        <version>2.066.1</version>
         <title>DMD</title>
         <authors>https://github.com/orgs/D-Programming-Language/people</authors>
         <owners>Daniel Jost</owners>
@@ -13,7 +13,7 @@
         <description>
 dmd is the reference compiler for the D programming language.
 
-You can specify a version by using `choco install dmd -Version 2.066`.
+You can specify a version by using `choco install dmd -Version 2.066.1`.
         </description>
         <summary>dmd is the reference compiler for the D programming language.</summary>
         <tags>dlang dmd</tags>
