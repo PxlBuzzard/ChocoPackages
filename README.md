@@ -12,6 +12,12 @@ NewPackage.cmd NameOfTheNewPackage
 
 Edit `NameOfTheNewPackage\tools\ChocolateyInstall.ps1` as needed, as well as `NameOfTheNewPackage\NameOfTheNewPackage.nuspec`.
 
+## Updating A Package
+
+```
+choco pack
+```
+
 ## License
 
 MIT License. See [LICENSE.md](LICENSE.md).
