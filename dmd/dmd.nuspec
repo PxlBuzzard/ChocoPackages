@@ -9,6 +9,10 @@
         <licenseUrl>http://wiki.dlang.org/DMD_License</licenseUrl>
         <projectUrl>http://dlang.org/</projectUrl>
         <iconUrl>https://cdn.rawgit.com/D-Programming-Language/dlang.org/master/images/dlogo.png</iconUrl>
+        <packageSourceUrl>https://chocolatey.org/packages/dmd</packageSourceUrl>
+        <docsUrl>https://dlang.org/spec/spec.html</docsUrl>
+        <bugTrackerUrl>https://issues.dlang.org/</bugTrackerUrl>
+        <projectSourceUrl>https://github.com/dlang/dmd</projectSourceUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>
 dmd is the reference compiler for the D programming language.
