@@ -1,7 +1,16 @@
-$packageName = 'dmd'
-$version = '2.073.2'
-$checksum = 'F3B9AD363463775223561B2D9A2EF8D83CC1585020107C7DF8F3D3EB4132BAFB'
-$url = 'http://downloads.dlang.org/releases/2.x/{0}/dmd.{0}.windows.zip' -f $version
-$installDir = Split-Path -parent $MyInvocation.MyCommand.Definition
+﻿$ErrorActionPreference = 'Stop'
 
-Install-ChocolateyZipPackage -PackageName "$packageName" -Url "$url" -UnzipLocation "$installDir" -Checksum "$checksum" -ChecksumType "sha256"
+$packageArgs = @{
+  packageName    = 'dmd'
+  fileType       = 'exe'
+  softwareName   = 'dmd'
+
+  checksum       = 'e02d6aff4b59b2f66ed21fb74e7d5688ec0a552df6a156df78937140a08f6293'
+  checksumType   = 'sha256'
+  url            = 'http://downloads.dlang.org/releases/2.x/2.082.1/dmd-2.082.1.exe'
+
+  silentArgs     = '/S'
+  validExitCodes = @(0)
+}
+
+Install-ChocolateyPackage @packageArgs
