@@ -1,6 +1,16 @@
-$packageName = 'dub'
-$version = '1.2.1'
-$url = 'https://code.dlang.org/files/dub-{0}-windows-x86.zip' -f $version
-$installDir = Split-Path -parent $MyInvocation.MyCommand.Definition
+﻿$ErrorActionPreference = 'Stop'
 
-Install-ChocolateyZipPackage "$packageName" "$url" "$installDir"
+$packageArgs = @{
+  packageName    = 'dub'
+  fileType       = 'exe'
+  softwareName   = 'dub'
+
+  checksum       = 'ea5176a9ad0c5c512375650a7fe773a40c8c6f4551d8b38764dbea83e9dcd850'
+  checksumType   = 'sha256'
+  url            = 'https://code.dlang.org/files/dub-1.11.0-setup.exe'
+
+  silentArgs     = '/S'
+  validExitCodes = @(0)
+}
+
+Install-ChocolateyPackage @packageArgs
