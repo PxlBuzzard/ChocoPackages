@@ -14,9 +14,7 @@
         <bugTrackerUrl>https://issues.dlang.org/</bugTrackerUrl>
         <projectSourceUrl>https://github.com/dlang/dmd</projectSourceUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>
-dmd is the reference compiler for the D programming language.
-        </description>
+        <description>dmd is the reference compiler for the D programming language.</description>
         <releaseNotes>https://dlang.org/changelog/2.082.1.html</releaseNotes>
         <summary>dmd is the reference compiler for the D programming language.</summary>
         <tags>dlang dmd compiler dub</tags>
