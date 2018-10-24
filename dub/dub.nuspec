@@ -6,7 +6,7 @@
         <title>dub</title>
         <authors>https://github.com/orgs/D-Programming-Language/people</authors>
         <owners>Daniel Jost</owners>
-        <licenseUrl>https://github.com/D-Programming-Language/dub/blob/master/LICENSE.txt</licenseUrl>
+        <licenseUrl>https://raw.githubusercontent.com/dlang/dub/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/D-Programming-Language/dub</projectUrl>
         <iconUrl>https://cdn.rawgit.com/D-Programming-Language/dub-registry/master/public/images/logo-small.png</iconUrl>
         <packageSourceUrl>https://chocolatey.org/packages/dub</packageSourceUrl>
