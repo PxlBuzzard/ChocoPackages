@@ -1,16 +1,21 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+$toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+
 $packageArgs = @{
-  packageName    = 'dub'
-  fileType       = 'exe'
-  softwareName   = 'dub'
+  PackageName    = 'dub'
+  FileFullPath = Get-Item $toolsPath\*windows-x86.zip
+  FileFullPath64 = Get-Item $toolsPath\*windows-x86_64.zip
+  Destination    = $toolsPath
 
-  checksum       = 'ea5176a9ad0c5c512375650a7fe773a40c8c6f4551d8b38764dbea83e9dcd850'
-  checksumType   = 'sha256'
-  url            = 'https://code.dlang.org/files/dub-1.11.0-setup.exe'
-
-  silentArgs     = '/S'
-  validExitCodes = @(0)
+  Checksum32       = ''
+  ChecksumType32   = ''
+  Checksum64       = ''
+  ChecksumType64   = ''
+  Url32            = 'https://github.com//dlang/dub/releases/download/v1.19.0/dub-v1.19.0-windows-x86.zip'
+  Url64            = 'https://github.com//dlang/dub/releases/download/v1.19.0/dub-v1.19.0-windows-x86_64.zip'
 }
 
-Install-ChocolateyPackage @packageArgs
+Get-ChildItem $toolsPath\* | Where-Object { $_.PSISContainer } | Remove-Item -Recurse -Force #remove older package dirs
+Get-ChocolateyUnzip @packageArgs
+Remove-Item $toolsPath\*.zip -ea 0 -Force

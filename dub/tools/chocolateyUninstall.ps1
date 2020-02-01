@@ -2,8 +2,7 @@ $ErrorActionPreference = 'Stop';
 
 $packageName = 'dub'
 
-$uninstalled = $false
-[array]$key = Get-UninstallRegistryKey -SoftwareName 'dub'
+[array]$key = Get-UninstallRegistryKey -SoftwareName $packageName
 
 if ($key.Count -eq 1) {
   $key | % {
