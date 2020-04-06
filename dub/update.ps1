@@ -19,7 +19,7 @@ function global:au_GetLatest {
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $url = "https://github.com/" + $url
   $url32 = $url -split "-windows-" | Select-Object -Index 0
-  $url32 = $url32 + "-windows-x86.zip"
+  $url32 = $url32 + "-windows-i686.zip"
   $url64 = $url -split "-windows-" | Select-Object -Index 0
   $url64 = $url64 + "-windows-x86_64.zip"
   $version = $url -split 'dub-v' | Select-Object -Last 1
