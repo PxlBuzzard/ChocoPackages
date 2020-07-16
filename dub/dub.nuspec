@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>dub</id>
-        <version>1.20.0.20200406</version>
+        <version>1.22.0</version>
         <title>dub</title>
         <authors>https://github.com/orgs/D-Programming-Language/people</authors>
         <owners>Daniel Jost</owners>
