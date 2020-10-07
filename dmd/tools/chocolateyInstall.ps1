@@ -5,9 +5,9 @@ $packageArgs = @{
   fileType       = 'exe'
   softwareName   = 'dmd'
 
-  checksum       = '2c219847a2f82b4e0282abaf1208a15b9dac273e610ff3b4ca0c4aa679c50344'
+  checksum       = '27de1eb00de3f9fab6daeebe90a9e61dd9d44663efa7103840d72dca4ba805ba'
   checksumType   = 'sha256'
-  url            = 'http://downloads.dlang.org/releases/2.x/2.093.0/dmd-2.093.0.exe'
+  url            = 'http://downloads.dlang.org/releases/2.x/2.094.0/dmd-2.094.0.exe'
 
   silentArgs     = '/S'
   validExitCodes = @(0)
