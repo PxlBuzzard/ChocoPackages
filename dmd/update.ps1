@@ -32,4 +32,4 @@ function global:au_GetLatest {
 
 update -ChecksumFor 32
 
-choco push dmd.$version.nupkg --source https://push.chocolatey.org/
+choco push dmd.$($Latest.Version).nupkg --source https://push.chocolatey.org/
