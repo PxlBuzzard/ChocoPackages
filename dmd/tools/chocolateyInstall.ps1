@@ -14,3 +14,14 @@ $packageArgs = @{
 }
 
 Install-ChocolateyPackage @packageArgs
+
+# Add dmd to PATH
+$destDir = "C:/D/dmd2/windows"
+
+$Bin = "bin"
+if("$(GET-OSARCHITECTUREWIDTH)" -match "64") {
+  $Bin = "bin64"
+}
+
+$BinPath = Join-Path -Resolve $destDir $Bin
+Install-ChocolateyPath -PathToInstall $BinPath -PathType User
