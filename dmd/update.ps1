@@ -19,12 +19,13 @@ function global:au_GetLatest {
   $re    = '\.exe$'
   $url   = $download_page.links | Where-Object href -match $re | Select-Object -First 1 -expand href
 
-  $version  = ($url -split '/' | Select-Object -Last 1 -Skip 1)
+  $version  = ($url -split '/' | Select-Object -Last 1)
+  $version = $version.trim('dmd-').trim('.exe')
 
   $releaseNotesUrl = "https://dlang.org/changelog/" + $version + ".html"
 
   @{
-    URL32 = "http://downloads.dlang.org/releases/2.x/$version/dmd-$version.exe"
+    URL32 = "https://s3.us-west-2.amazonaws.com/downloads.dlang.org/releases/2021/dmd-$version.exe"
     Version = $version
     ReleaseNotes = $releaseNotesUrl
   }
