@@ -1,17 +1,13 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   PackageName    = 'dub'
-  FileFullPath = "$toolsPath\dub-v1.20.0-windows-windows-i686.zip"
-  FileFullPath64 = "$toolsPath\dub-v1.20.0-windows-windows-x86_64.zip"
-  Destination    = $toolsPath
-
-  Url32            = 'https://github.com//dlang/dub/releases/download/v1.23.0/dub-v1.23.0-windows-x86_64.zip'
-  Url64            = 'https://github.com//dlang/dub/releases/download/v1.23.0/dub-v1.23.0-windows-x86_64.zip'
+  Url            = 'https://github.com//dlang/dub/releases/download/v1.23.0/dub-v1.23.0-windows-x86_64.zip'
+  Checksum       = '53e51ad3ab62f493abfb2314a6b957c8166a2f7239100b0e7ae518340353a969'
+  ChecksumType   = 'SHA256'
+  unzipLocation  = $toolsDir
 }
 
-Get-ChildItem $toolsPath\* | Where-Object { $_.PSISContainer } | Remove-Item -Recurse -Force #remove older package dirs
 Install-ChocolateyZipPackage @packageArgs
-Remove-Item $toolsPath\*.zip -ea 0 -Force

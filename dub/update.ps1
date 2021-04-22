@@ -3,8 +3,8 @@ import-module au
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "(?i)(^\s*Url32\s*=\s*)('.*')"        = "`$1'$($Latest.URL32)'"
-      "(?i)(^\s*Url64\s*=\s*)('.*')"        = "`$1'$($Latest.URL64)'"
+      "(?i)(^\s*Url\s*=\s*)('.*')"        = "`$1'$($Latest.URL)'"
+      "(?i)(^\s*Checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum)'"
     }
   }
 }
@@ -20,11 +20,10 @@ function global:au_GetLatest {
   $version =  $version -split '-windows' | Select-Object -Index 0
   @{
     Version = $version
-    URL32   = $url
-    URL64   = $url
+    URL     = $url
   }
 }
 
-update -ChecksumFor none
+update -ChecksumFor 64
 
 choco push dub.$($Latest.Version).nupkg --source https://push.chocolatey.org/
