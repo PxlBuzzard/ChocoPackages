@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>dmd</id>
-        <version>2.096.0</version>
+        <version>2.097.1</version>
         <title>DMD</title>
         <authors>Walter Bright, Andrei Alexandrescu</authors>
         <owners>Daniel Jost</owners>
@@ -15,7 +15,7 @@
         <projectSourceUrl>https://github.com/dlang/dmd</projectSourceUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>dmd is the reference compiler for the D programming language.</description>
-        <releaseNotes>https://dlang.org/changelog/2.096.0.html</releaseNotes>
+        <releaseNotes>https://dlang.org/changelog/2.097.1.html</releaseNotes>
         <summary>dmd is the reference compiler for the D programming language.</summary>
         <tags>dlang dmd compiler dub</tags>
   </metadata>
