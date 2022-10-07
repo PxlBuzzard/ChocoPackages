@@ -25,7 +25,7 @@ function global:au_GetLatest {
   $releaseNotesUrl = "https://dlang.org/changelog/" + $version + ".html"
 
   @{
-    URL32 = "https://s3.us-west-2.amazonaws.com/downloads.dlang.org/releases/2021/dmd-$version.exe"
+    URL32 = "https://downloads.dlang.org/releases/2022/dmd-$version.exe"
     Version = $version
     ReleaseNotes = $releaseNotesUrl
   }

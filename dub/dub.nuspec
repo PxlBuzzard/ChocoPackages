@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>dub</id>
-        <version>1.23.0</version>
+        <version>1.29.0</version>
         <title>dub package manager</title>
         <authors>https://github.com/orgs/dlang/people</authors>
         <owners>Daniel Jost</owners>
