@@ -4,19 +4,22 @@
         <id>dub</id>
         <version>1.29.0</version>
         <title>dub package manager</title>
-        <authors>https://github.com/orgs/dlang/people</authors>
+        <authors>https://github.com/dlang/dub/graphs/contributors</authors>
         <owners>Daniel Jost</owners>
         <licenseUrl>https://raw.githubusercontent.com/dlang/dub/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/dlang/dub</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/dlang/dub-registry/master/public/images/logo-small.png</iconUrl>
         <packageSourceUrl>https://chocolatey.org/packages/dub</packageSourceUrl>
+        <docsUrl>https://github.com/dlang/dub/wiki</docsUrl>
+        <bugTrackerUrl>https://github.com/dlang/dub/issues</bugTrackerUrl>
+        <projectSourceUrl>https://github.com/dlang/dub</projectSourceUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>DUB emerged as a more general replacement for vibe.d's package manager. It does not imply a dependecy to vibe.d for packages and was extended to not only directly build projects, but also to generate project files (currently VisualD). Mono-D also support the use of dub.json (dub's package description) as project file.</description>
-        <releaseNotes>https://github.com/dlang/dub/releases</releaseNotes>
-        <summary>Package and build manager for D applications and libraries.</summary>
+        <summary>Package and build management system for D.</summary>
         <tags>dlang dub package cli</tags>
-  </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-  </files>
+        <releaseNotes>https://github.com/dlang/dub/releases/tag/v1.29.0</releaseNotes>
+    </metadata>
+    <files>
+        <file src="tools\**" target="tools" />
+    </files>
 </package>
