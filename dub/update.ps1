@@ -42,5 +42,3 @@ function global:au_GetLatest {
 }
 
 update -ChecksumFor none -NoCheckChocoVersion
-
-choco push dub.$($Latest.Version).nupkg --source https://push.chocolatey.org/

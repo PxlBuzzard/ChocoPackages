@@ -1,0 +1,77 @@
+name: Nightly package update
+
+on:
+  schedule:
+    # Run nightly at 02:17 UTC.
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nightly-package-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Check and publish package updates
+    runs-on: windows-latest
+    timeout-minutes: 60
+
+    defaults:
+      run:
+        shell: powershell
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          # The AU history and Git plugins need repository history.
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global core.safecrlf false
+
+      - name: Install AU
+        run: |
+          git clone --quiet https://github.com/majkinetor/au.git "$Env:RUNNER_TEMP\au"
+          . "$Env:RUNNER_TEMP\au\scripts\Install-AU.ps1"
+
+      - name: Configure Chocolatey credentials
+        env:
+          CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($Env:CHOCOLATEY_API_KEY)) {
+            throw "The CHOCOLATEY_API_KEY repository secret is not configured."
+          }
+
+          choco apikey --key $Env:CHOCOLATEY_API_KEY --source https://push.chocolatey.org/
+
+      - name: Check for updates
+        env:
+          au_Push: "false"
+          github_api_key: ${{ github.token }}
+          github_user_repo: ${{ github.repository }}
+        run: .\update_all.ps1
+
+      - name: Publish updates
+        run: |
+          Get-ChildItem -Path . -Recurse -Filter push.ps1 -File | ForEach-Object {
+            & $_.FullName
+          }
+
+      - name: Upload AU report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: au-update-report
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            update_info.xml
+            Update-AUPackages.md
+            Update-History.md
