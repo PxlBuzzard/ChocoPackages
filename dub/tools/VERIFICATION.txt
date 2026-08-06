@@ -1,0 +1,15 @@
+VERIFICATION
+
+The archive included in this package is published by the DUB project on its
+GitHub release page.
+
+Download URL:
+https://github.com/dlang/dub/releases/download/v1.29.0/dub-v1.29.0-windows-x86_64.zip
+
+To verify the archive, download it from the URL above and calculate its SHA-256
+checksum. It must match:
+
+b936f8beea7c824ada312e40b20f64d63293c61cb6a040e1fc21b1c220dcdb75
+
+PowerShell command:
+Get-FileHash .\dub-v1.29.0-windows-x86_64.zip -Algorithm SHA256

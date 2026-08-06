@@ -23,6 +23,11 @@ function global:au_SearchReplace {
     ".\dub.nuspec" = @{
       "\<releaseNotes\>.+" = "<releaseNotes>$($Latest.ReleaseNotes)</releaseNotes>"
     }
+    ".\tools\VERIFICATION.txt" = @{
+      "(?m)^https://github\.com/dlang/dub/releases/download/.+windows-x86_64\.zip$" = $Latest.URL64
+      "(?m)^[a-f0-9]{64}$" = $Latest.Checksum64
+      "(?m)^Get-FileHash \.\\dub-.+windows-x86_64\.zip -Algorithm SHA256$" = "Get-FileHash .\$(Split-Path $Latest.URL64 -Leaf) -Algorithm SHA256"
+    }
   }
 }
 

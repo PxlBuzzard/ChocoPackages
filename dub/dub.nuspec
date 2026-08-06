@@ -7,9 +7,9 @@
         <authors>https://github.com/dlang/dub/graphs/contributors</authors>
         <owners>Daniel Jost</owners>
         <licenseUrl>https://raw.githubusercontent.com/dlang/dub/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/dlang/dub</projectUrl>
+        <projectUrl>https://dub.pm/</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/dlang/dub-registry/master/public/images/logo-small.png</iconUrl>
-        <packageSourceUrl>https://chocolatey.org/packages/dub</packageSourceUrl>
+        <packageSourceUrl>https://github.com/PxlBuzzard/ChocoPackages/tree/master/dub</packageSourceUrl>
         <docsUrl>https://github.com/dlang/dub/wiki</docsUrl>
         <bugTrackerUrl>https://github.com/dlang/dub/issues</bugTrackerUrl>
         <projectSourceUrl>https://github.com/dlang/dub</projectSourceUrl>
