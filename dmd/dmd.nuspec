@@ -9,13 +9,13 @@
         <licenseUrl>https://github.com/dlang/dmd/blob/master/LICENSE.txt</licenseUrl>
         <projectUrl>http://dlang.org/</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/dlang/dlang.org/master/images/dlogo.png</iconUrl>
-        <packageSourceUrl>https://github.com/PxlBuzzard/ChocoPackages</packageSourceUrl>
+        <packageSourceUrl>https://github.com/PxlBuzzard/ChocoPackages/tree/master/dmd</packageSourceUrl>
         <docsUrl>https://dlang.org/spec/spec.html</docsUrl>
         <bugTrackerUrl>https://issues.dlang.org/</bugTrackerUrl>
         <projectSourceUrl>https://github.com/dlang/dmd</projectSourceUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>dmd is the reference compiler for the D programming language.</description>
-        <releaseNotes>https://dlang.org/changelog/2.105.2.html</releaseNotes>
+        <releaseNotes>https://dlang.org/changelog/</releaseNotes>
         <summary>dmd is the reference compiler for the D programming language.</summary>
         <tags>dlang dmd compiler dub</tags>
   </metadata>
