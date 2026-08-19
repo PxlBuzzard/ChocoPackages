@@ -55,11 +55,8 @@ $Options = [ordered]@{
         Path = "$PSScriptRoot\Update-History.md"            #Path where to save history
     }
 
-    Gist = @{
-        Id     = $Env:gist_id                               #Your gist id; leave empty for new private or anonymous gist
-        ApiKey = $Env:github_api_key                        #Your github api key - if empty anoymous gist is created
-        Path   = "$PSScriptRoot\Update-AUPackages.md", "$PSScriptRoot\Update-History.md"       #List of files to add to the gist
-    }
+    # Gist is added below only when a dedicated token is configured. The
+    # repository-scoped GITHUB_TOKEN cannot create gists.
 
     Git = @{
         User     = ''                                       #Git username, leave empty if github api key is used
@@ -102,6 +99,14 @@ $Options = [ordered]@{
         $global:au_Force         = $true
         $global:au_IncludeStream = $Matches['stream']
         $global:au_Version       = $Matches['version']
+    }
+}
+
+if (-not [string]::IsNullOrWhiteSpace($Env:gist_api_key)) {
+    $Options.Gist = @{
+        Id     = $Env:gist_id
+        ApiKey = $Env:gist_api_key
+        Path   = "$PSScriptRoot\Update-AUPackages.md", "$PSScriptRoot\Update-History.md"
     }
 }
 

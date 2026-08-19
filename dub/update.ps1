@@ -41,7 +41,7 @@ function global:au_GetLatest {
 
     return @{
         Version      = $version.Substring(1)
-        URL32        = $url
+        URL64        = $url
         ReleaseNotes = "$RepoUrl/releases/tag/$version"
     }
 }
