@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # The AU history and Git plugins need repository history.
           fetch-depth: 0
@@ -69,7 +69,7 @@ jobs:
 
       - name: Upload AU report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: au-update-report
           if-no-files-found: warn
