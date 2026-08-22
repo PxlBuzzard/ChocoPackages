@@ -53,19 +53,13 @@ jobs:
 
       - name: Check for updates
         env:
-          au_Push: "false"
+          au_Push: "true"
           github_api_key: ${{ github.token }}
           # Optional classic PAT with the `gist` scope. The built-in token
           # cannot create gists; leaving this secret unset disables gist upload.
           gist_api_key: ${{ secrets.GIST_API_KEY }}
           github_user_repo: ${{ github.repository }}
         run: .\update_all.ps1
-
-      - name: Publish updates
-        run: |
-          Get-ChildItem -Path . -Recurse -Filter push.ps1 -File | ForEach-Object {
-            & $_.FullName
-          }
 
       - name: Upload AU report
         if: always()
