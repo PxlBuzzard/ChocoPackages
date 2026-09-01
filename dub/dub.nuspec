@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>dub</id>
-        <version>1.29.0</version>
+        <version>1.40.0</version>
         <title>dub package manager</title>
         <authors>https://github.com/dlang/dub/graphs/contributors</authors>
         <owners>Daniel Jost</owners>
@@ -17,7 +17,7 @@
         <description>DUB emerged as a more general replacement for vibe.d's package manager. It does not imply a dependecy to vibe.d for packages and was extended to not only directly build projects, but also to generate project files (currently VisualD). Mono-D also support the use of dub.json (dub's package description) as project file.</description>
         <summary>Package and build management system for D.</summary>
         <tags>dlang dub package cli</tags>
-        <releaseNotes>https://github.com/dlang/dub/releases/tag/v1.29.0</releaseNotes>
+        <releaseNotes>https://github.com/dlang/dub/releases/tag/v1.40.0</releaseNotes>
     </metadata>
     <files>
         <file src="tools\**" target="tools" />
