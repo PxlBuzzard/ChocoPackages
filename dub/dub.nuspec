@@ -4,8 +4,9 @@
         <id>dub</id>
         <version>1.40.0</version>
         <title>dub package manager</title>
-        <authors>https://github.com/dlang/dub/graphs/contributors</authors>
+        <authors>DUB contributors</authors>
         <owners>Daniel Jost</owners>
+        <copyright>2012-2018 RejectedSoftware e.K.; 2016-2018 D Language Foundation</copyright>
         <licenseUrl>https://raw.githubusercontent.com/dlang/dub/master/LICENSE</licenseUrl>
         <projectUrl>https://dub.pm/</projectUrl>
         <iconUrl>https://cdn.jsdelivr.net/gh/dlang/dub-registry@master/public/images/logo-small.png</iconUrl>
