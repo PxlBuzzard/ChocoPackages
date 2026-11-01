@@ -14,18 +14,26 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -UseBasicParsing -Uri "https://dlang.org/download.html"
+  $release = Invoke-RestMethod -Uri "https://api.github.com/repos/dlang/dmd/releases/latest" -Headers @{
+    Accept = "application/vnd.github+json"
+    "User-Agent" = "ChocoPackages-DMD-AU"
+  }
 
-  $re    = '\.exe$'
-  $url   = $download_page.links | Where-Object href -match $re | Select-Object -First 1 -expand href
+  if ($release.tag_name -notmatch '^v?(\d+\.\d+\.\d+)$') {
+    throw "Latest DMD release has an unexpected tag: $($release.tag_name)"
+  }
+  $version = $Matches[1]
 
-  $version  = ($url -split '/' | Select-Object -Last 1)
-  $version = $version.trim('dmd-').trim('.exe')
+  $installerName = "dmd-$version.exe"
+  $installer = $release.assets | Where-Object name -eq $installerName | Select-Object -First 1
+  if (-not $installer) {
+    throw "Could not find $installerName in the latest DMD release ($($release.tag_name))."
+  }
 
-  $releaseNotesUrl = "https://dlang.org/changelog/" + $version + ".html"
+  $releaseNotesUrl = "https://dlang.org/changelog/$version.html"
 
   @{
-    URL32 = $url
+    URL32 = $installer.browser_download_url
     Version = $version
     ReleaseNotes = $releaseNotesUrl
   }
