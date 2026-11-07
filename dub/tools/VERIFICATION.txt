@@ -4,12 +4,12 @@ The archive included in this package is published by the DUB project on its
 GitHub release page.
 
 Download URL:
-https://github.com/dlang/dub/releases/download/v1.40.0/dub-v1.40.0-windows-x86_64.zip
+https://github.com/dlang/dub/releases/download/v1.43.0/dub-v1.43.0-windows-x86_64.zip
 
 To verify the archive, download it from the URL above and calculate its SHA-256
 checksum. It must match:
 
-31A6A6982653B279FE0849C1D95B6572F2762A45167C5771B04F6651CF527C39
+C1504731E30BB884C5C5E7B9A9A802C5F128A2A49F14227C8D1CAEF9DDF4CD87
 
 PowerShell command:
-Get-FileHash .\dub-v1.40.0-windows-x86_64.zip -Algorithm SHA256
+Get-FileHash .\dub-v1.43.0-windows-x86_64.zip -Algorithm SHA256
