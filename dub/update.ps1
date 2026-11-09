@@ -22,6 +22,7 @@ function global:au_SearchReplace {
   @{
     ".\dub.nuspec" = @{
       "\<releaseNotes\>.+" = "<releaseNotes>$($Latest.ReleaseNotes)</releaseNotes>"
+      "\<iconUrl\>.+\</iconUrl\>" = "<iconUrl>$($Latest.IconUrl)</iconUrl>"
     }
     ".\tools\VERIFICATION.txt" = @{
       "(?m)^https://github\.com/dlang/dub/releases/download/.+windows-x86_64\.zip$" = $Latest.URL64
@@ -39,10 +40,20 @@ function global:au_GetLatest {
     $version = $url -split '/' | Select-Object -Last 1 -Skip 1
     Write-Host "VERSION: " $version
 
+    $iconCommits = Invoke-RestMethod -Uri "https://api.github.com/repos/dlang/dub-registry/commits?path=public%2Fimages%2Flogo-small.png&per_page=1" -Headers @{
+        Accept = "application/vnd.github+json"
+        "User-Agent" = "ChocoPackages-Dub-AU"
+    }
+    $iconCommit = $iconCommits | Select-Object -First 1
+    if (-not $iconCommit -or $iconCommit.sha -notmatch '^[a-f0-9]{40}$') {
+        throw "Could not determine a valid commit for the dub-registry icon."
+    }
+
     return @{
         Version      = $version.Substring(1)
         URL64        = $url
         ReleaseNotes = "$RepoUrl/releases/tag/$version"
+        IconUrl      = "https://cdn.jsdelivr.net/gh/dlang/dub-registry@$($iconCommit.sha)/public/images/logo-small.png"
     }
 }
 
